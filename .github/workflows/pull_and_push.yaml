@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Pull image
-        run: docker pull "$SOURCE_IMAGE:$IMAGE_VERSION"
+        run: docker pull --platform linux/arm64 "$SOURCE_IMAGE:$IMAGE_VERSION"
 
       - name: Tag image
         run: docker image tag "$SOURCE_IMAGE:$IMAGE_VERSION" "$TARGET_IMAGE:$IMAGE_VERSION"
